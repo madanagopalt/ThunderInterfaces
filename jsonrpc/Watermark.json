@@ -26,6 +26,9 @@
       "type": "number",
       "size": 32
     },
+    "alpha": {
+      "type": "string"
+    },
     "palettedwatermarkdata": {
         "type":"object",
         "properties": {
@@ -96,6 +99,32 @@
         "id",
         "key",
         "size"
+      ]
+    },
+    "watermarkalpharequest":{
+        "type": "object",
+        "properties": {
+            "id": {
+              "$ref": "#/definitions/id"
+            },
+            "alpha": {
+              "$ref": "#/definitions/alpha"
+            }
+      },
+      "required": [
+        "id",
+        "alpha"
+      ]
+    },
+    "PersistLoadrequest":{
+      "type": "object",
+      "properties": {
+          "id": {
+            "$ref": "#/definitions/id"
+          }
+      },
+      "required": [
+        "id"
       ]
     },
     "setpalettedwatermarkrequest":{
@@ -198,6 +227,32 @@
      },
      "errors": [
      ]
+    },
+    "setwatermarkalpha": {
+     "summary": "set alpha for the watermark",
+     "description": "set alpha for specified watermark id",
+     "params": {
+       "$ref": "#/definitions/watermarkalpharequest"
+     },
+     "result": {
+       "type": "boolean"
+     },
+     "errors": [
+     ]
+    },
+    "PersistLoadWatermark": {
+      "summary": "update the watermark from persistent storage",
+    "PersistLoadWatermark": {
+      "summary": "update the watermark from persistent storage",
+      "description": "update the created watermark entry with image data from persistent storage",
+      "params": {
+        "$ref": "#/definitions/PersistLoadrequest"
+      },
+      "result": {
+        "type": "boolean"
+      },
+      "errors": [
+      ]
     },
     "adjustwatermark": {
      "summary": "adjust the watermark",
