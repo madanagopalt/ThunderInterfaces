@@ -242,8 +242,6 @@
     },
     "PersistLoadWatermark": {
       "summary": "update the watermark from persistent storage",
-    "PersistLoadWatermark": {
-      "summary": "update the watermark from persistent storage",
       "description": "update the created watermark entry with image data from persistent storage",
       "params": {
         "$ref": "#/definitions/PersistLoadrequest"
