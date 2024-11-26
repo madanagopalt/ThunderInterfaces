@@ -33,13 +33,12 @@ namespace Exchange {
         virtual uint32_t Deinitialize() = 0;
         virtual uint32_t Register(INotification* notification) = 0;
         virtual uint32_t Unregister(INotification* notification) = 0;
-        virtual bool ShowWatermark(const bool show) = 0;
+        virtual bool ShowWatermark(const bool show, uint32_t alpha) = 0;
         virtual bool CreateWatermark(uint32_t id, uint32_t zorder) = 0;
         virtual bool UpdateWatermark(uint32_t id, uint32_t key, uint32_t size) = 0;
         virtual bool PersistLoadWatermark(uint32_t id) = 0;
         virtual bool AdjustWatermark(uint32_t id, uint32_t zorder) = 0;
         virtual bool DeleteWatermark(uint32_t id) = 0;
-        virtual bool SetWatermarkAlpha(uint32_t id, string alpha) = 0;
         virtual PalettedImageData GetPalettedWatermark(uint32_t id) = 0;
         virtual bool ModifyPalettedWatermark(uint32_t id, PalettedImageData data) = 0;
     };
