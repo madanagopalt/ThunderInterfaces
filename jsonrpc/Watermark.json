@@ -27,7 +27,11 @@
       "size": 32
     },
     "alpha": {
-      "type": "string"
+      "type": "number",
+      "size": 32
+    },
+    "show": {
+      "type": "boolean"
     },
     "palettedwatermarkdata": {
         "type":"object",
@@ -67,6 +71,20 @@
         "waylanddisplay"
       ]
     },
+    "showrequest":{
+        "type": "object",
+        "properties": {
+            "show": {
+              "$ref": "#/definitions/show"
+            },
+            "alpha": {
+              "$ref": "#/definitions/alpha"
+            }
+      },
+      "required": [
+        "show"
+      ]
+    },
     "createrequest":{
         "type": "object",
         "properties": {
@@ -99,21 +117,6 @@
         "id",
         "key",
         "size"
-      ]
-    },
-    "watermarkalpharequest":{
-        "type": "object",
-        "properties": {
-            "id": {
-              "$ref": "#/definitions/id"
-            },
-            "alpha": {
-              "$ref": "#/definitions/alpha"
-            }
-      },
-      "required": [
-        "id",
-        "alpha"
       ]
     },
     "PersistLoadrequest":{
@@ -196,7 +199,7 @@
       "summary": "display or hide the watermark",
       "description": "either draw or hide the watermark",
       "params": {
-        "$ref": "#/common/results/void"
+        "$ref": "#/definitions/showrequest"
       },
       "result": {
         "type": "boolean"
